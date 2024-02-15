@@ -77,6 +77,57 @@ class _MyHomePageState extends State<MyHomePage> {
     // The Flutter framework has been optimized to make rerunning build methods
     // fast, so that you can just rebuild anything that needs updating rather
     // than having to individually change instances of widgets.
-    return Text(location["city"]!);
+    return   Scaffold(body: Column(
+      crossAxisAlignment: CrossAxisAlignment.center,
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: [
+        Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            BoxPlaceholder(width: 200, height: 200, color: Colors.blue, text: location["city"]!),
+            BoxPlaceholder(width: 200, height: 200, color: Colors.red, text: location["state"]!),
+            BoxPlaceholder(width: 200, height: 200, color: Colors.yellow, text: location["zip"]!),
+          ],
+        ),
+        BoxPlaceholder(width: 200, height: 200, text: "TEMPERATURE"),
+        Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            BoxPlaceholder(width: 200, height: 200, color: Colors.green, text: forecast["detailedForecast"]!),
+            BoxPlaceholder(width: 200, height: 200, color: Colors.purple,  text: forecast["windSpeed"]!),
+          ],
+        ),
+      ],
+    ));
+  }
+}
+
+class BoxPlaceholder extends StatelessWidget {
+  final double? width;
+  final double? height;
+  final double padding;
+  final String text;
+  final Color color;
+  
+   BoxPlaceholder({
+    super.key,
+    required this.width,
+    required this.height,
+    this.padding = 4,
+    this.color = Colors.black,
+    this.text = ""
+});
+
+
+
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding:  EdgeInsets.all(padding),
+      child: SizedBox(
+        width: width,
+        height: height,
+        child: Placeholder(color: color, child: Center(child: Text(text)))),
+    );
   }
 }
