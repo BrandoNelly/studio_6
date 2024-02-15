@@ -85,15 +85,15 @@ class _MyHomePageState extends State<MyHomePage> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             BoxPlaceholder(width: 200, height: 200, color: Colors.blue, text: location["city"]!),
-            BoxPlaceholder(width: 200, height: 200, color: Colors.red, text: location["state"]!),
+            BoxPlaceholder(width: 200, height: 200, padding: 20, color: Colors.red, text: location["state"]!),
             BoxPlaceholder(width: 200, height: 200, color: Colors.yellow, text: location["zip"]!),
           ],
         ),
-        BoxPlaceholder(width: 200, height: 200, text: "TEMPERATURE"),
+        BoxPlaceholder(width: 500, height: 100, text: "TEMPERATURE"),
         Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            BoxPlaceholder(width: 200, height: 200, color: Colors.green, text: forecast["detailedForecast"]!),
+            BoxPlaceholder(width: 200, height: 200, padding: 20, color: Colors.green, text: forecast["detailedForecast"]!),
             BoxPlaceholder(width: 200, height: 200, color: Colors.purple,  text: forecast["windSpeed"]!),
           ],
         ),
